@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_res_config_settings_form_inherit_auto_logoff" model="ir.ui.view">
+            <field name="name">res.config.settings.inherit.auto.log.off</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr_attendance.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@data-key='hr_attendance']" position="inside">
+                    <h2>Auto Check Off</h2>
+                    <div class="row mt16 o_settings_container" name="pincode_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box"
+                        >
+                            <div class="o_setting_left_pane">
+                                <field name="auto_checkout_all_employees"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Auto Check Out</span>
+                                <div class="text-muted">
+                                    Enable to activate Auto Check Out
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row mt16 o_settings_container" name="pincode_setting_container">
+                        <group>
+                            <field name="auto_log_off_time"/>
+
+                        </group>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

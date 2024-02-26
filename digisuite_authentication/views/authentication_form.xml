@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="authentication_detail_form_view" model="ir.ui.view">
+        <field name="name">authentication.detail.form</field>
+        <field name="model">authentication.detail</field>
+        <field name="arch" type="xml">
+            <form string="Authentication" create="0" delete="0">
+                <sheet>
+                  <group>
+                      <field name="activation_key" required="1"/>
+                       <field name="auth_build_key" required="0"/>
+                       <field name="auth_host_name" readonly="1"/>
+                      <field name="auth_mac_address" readonly="1"/>
+                       <field name="auth_full_name" required="1"/>
+                       <field name="auth_company_name" required="1"/>
+                      <field name="auth_country_id" required="1"/>
+                      <field name="auth_mobile" required="1"/>
+                      <field name="auth_phone" required="1"/>
+                      <field name="auth_email" required="1"/>
+                      <field name="is_activated" invisible="1"/>
+                  </group>
+                    <footer>
+						<button name="digi_authen_activation_api" string="Invoke" type="object" class="btn-primary"/>
+						<button string="Cancel" class="btn-default" special="cancel" />
+					</footer>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+     <record id="authentication_detail_tree_view" model="ir.ui.view">
+        <field name="name">authentication.detail.tree</field>
+        <field name="model">authentication.detail</field>
+        <field name="arch" type="xml">
+            <tree string="Authentication" create="0" delete="0">
+                <field name="activation_key"/>
+                <field name="auth_mac_address" readonly="1"/>
+                <field name="auth_full_name"/>
+                  <field name="is_activated"/>
+            </tree>
+        </field>
+    </record>
+
+     <record id="authentication_detail_action" model="ir.actions.act_window">
+        <field name="name">Authentication</field>
+        <field name="res_model">authentication.detail</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+<!--    <menuitem id="authentication_detail_menu_root"-->
+<!--              name="Authentication"-->
+<!--              sequence="80"-->
+<!--              web_icon=""-->
+<!--           />-->
+
+<!--    <menuitem id="authentication_detail_menu"-->
+<!--              name="Authentication"-->
+<!--              sequence="10"-->
+<!--              parent="authentication_detail_menu_root"-->
+<!--              action="authentication_detail_action"-->
+<!--              />-->
+
+</odoo>
